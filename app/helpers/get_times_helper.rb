@@ -1,0 +1,2 @@
+module GetTimesHelper
+end

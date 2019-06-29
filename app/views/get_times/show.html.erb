@@ -1,0 +1,16 @@
+  <p>
+    Teacher's Name: 
+    <%= @entry.name %>
+  </p>
+  
+  <p>
+    In or Out: 
+    <%= @entry.inout %>
+  </p>
+  
+    <p>
+    Time: 
+    <%= @entry.created_at.localtime.strftime('%m/%d/%Y at %I:%M %p') %>
+  </p>
+  
+<%= link_to 'Back', get_times_path %>

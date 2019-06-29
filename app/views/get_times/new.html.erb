@@ -1,0 +1,17 @@
+<%= form_with scope: :get_time, url: get_times_path, local: true do |form| %>
+  <p>
+    <%= form.label "Teacher's Name" %><br>
+    <%= form.text_field :name %>
+  </p>
+  
+  <p>
+  <%= form.label "Check In/Out" %><br>
+    <%= form.select :inout, options_for_select(["In", "Out"]) %>
+  </p>
+  
+  <p>
+    <%= form.submit 'Submit'%>
+  </p>
+<% end %>
+
+<%= link_to 'Back', get_times_path %>

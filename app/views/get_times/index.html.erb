@@ -1,0 +1,29 @@
+
+<h1>Check In/Check Out History</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>In or Out</th>
+    <th>Time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+  <% @entries.each do |e| %>
+  
+    <tr>
+      <td><%= e.name %></td>
+      <td><%= e.inout %></td>
+      <td><%= e.created_at.localtime.strftime('%m/%d/%Y at %I:%M %p') %></td>
+      <td><%= link_to 'Show', get_time_path(e) %></td>
+      <td><%= link_to 'Edit', edit_get_time_path(e) %></td>
+      <td><%= link_to 'Delete', get_time_path(e), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Create New Check In/Out', new_get_time_path %>
+
+

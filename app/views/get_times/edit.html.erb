@@ -1,0 +1,25 @@
+<h1>Edit</h1>
+ 
+<%= form_for @entry, url: get_time_path(@entry), html: { method: :put } do |form| %>
+  <p>
+    <%= form.label "Teacher's Name" %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+   <p>
+    <%= form.label "In or Out" %><br>
+    <%= form.text_field :inout %>
+  </p>
+ 
+  <p>
+    <%= form.label "Time (Cannot Edit)" %><br>
+    <%= @entry.created_at.localtime.strftime('%m/%d/%Y at %I:%M %p') %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', get_times_path %>
