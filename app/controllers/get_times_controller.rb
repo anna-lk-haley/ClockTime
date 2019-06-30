@@ -32,7 +32,11 @@ class GetTimesController < ApplicationController
     end
     
     def index
-    @entries = Entry.all
+    @entries = if params[:search]
+            Entry.where('name LIKE ?', "%#{params[:search]}%")
+        else
+            Entry.all
+        end
     end
 
     def destroy
