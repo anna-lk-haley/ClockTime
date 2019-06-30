@@ -1,7 +1,7 @@
 <%= form_with scope: :get_time, url: get_times_path, local: true do |form| %>
   <p>
     <%= form.label "Teacher's Name" %><br>
-    <%= form.text_field :name %>
+    <%= form.select :name, options_for_select(["Ringo", "John", "Paul", "George"]) %>
   </p>
   
   <p>
